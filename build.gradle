@@ -23,7 +23,7 @@ plugins {
 
 sonarqube {
   properties {
-    property "sonar.projectKey", "elemestanza_g3-calidad-software"
+    property "sonar.projectKey", "elemestanza_G3-Calidad-Software"
     property "sonar.organization", "elemestanza"
     property "sonar.host.url", "https://sonarcloud.io"
   }
