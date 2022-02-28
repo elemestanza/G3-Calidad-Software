@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Analyze on SonarCloud
-          command: gradle build sonarqube --gradle-version 7.0.2 --distribution-type all
+          command: gradle build sonarqube --gradle-version 6.6.1 --distribution-type all
 
 workflows:
   main:
