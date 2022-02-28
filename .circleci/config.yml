@@ -8,9 +8,7 @@ jobs:
       - checkout
       - run:
           name: Analyze on SonarCloud
-          command:
-            - gradle wrapper --gradle-version 7.0
-            - gradle build sonarqube --gradle-version 7.0.2 --distribution-type all
+          command: gradle wrapper --gradle-version 7.0 && gradle build sonarqube --gradle-version 7.0.2 --distribution-type all
 
 workflows:
   main:
