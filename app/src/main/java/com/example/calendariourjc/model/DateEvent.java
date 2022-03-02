@@ -2,7 +2,6 @@ package com.example.calendariourjc.model;
 
 import android.content.SharedPreferences;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -106,7 +105,7 @@ public class DateEvent {
         for(int i = 0; i < lastIndex; i++) {
             String date = sharedPrefs.getString(i + "-DateEvent-Date", "");
 
-            if(date == "") continue;
+            if(date.equals(" ")) continue;
 
             String title = sharedPrefs.getString(i + "-DateEvent-Title",  "");
             String description = sharedPrefs.getString(i + "-DateEvent-Description", "");
