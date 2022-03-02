@@ -1,6 +1,6 @@
-/*ext {
+ext {
     targetCompatibility = VERSION_1_8
-}*/
+}
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
@@ -15,20 +15,8 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-
-plugins {
-  id "org.sonarqube" version "3.3"
-}
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-sonarqube {
-  properties {
-    property "sonar.projectKey", "elemestanza_G3-Calidad-Software"
-    property "sonar.organization", "elemestanza"
-    property "sonar.host.url", "https://sonarcloud.io"
-    property "sonar.projectVersion", "7.0.2"
-  }
-}
+
