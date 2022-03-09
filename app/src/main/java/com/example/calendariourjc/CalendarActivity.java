@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CalendarActivity extends AppCompatActivity {
 
-    private CalendarView calendar;
+    public CalendarView calendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
