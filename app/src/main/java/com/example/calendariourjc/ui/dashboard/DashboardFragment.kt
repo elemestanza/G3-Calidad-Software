@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.calendariourjc.CalendarActivity
+import com.example.calendariourjc.EventDetailActivity
 import com.example.calendariourjc.EventsActivity
 import com.example.calendariourjc.ScheduleActivity
 import com.example.calendariourjc.databinding.FragmentDashboardBinding
@@ -48,6 +49,16 @@ class DashboardFragment : Fragment() {
         goEventsBtn.setOnClickListener {
             val eventsActivity = Intent(context, EventsActivity::class.java)
             startActivity(eventsActivity)
+        }
+
+        /*
+        * NEW
+        */
+
+        val eventsGo = binding.goEventsBtn;
+        eventsGo.setOnClickListener {
+            val eventDetailActivity = Intent(context, EventDetailActivity::class.java)
+            startActivity(eventDetailActivity)
         }
 
         return root
