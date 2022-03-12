@@ -16,15 +16,16 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:orientation="vertical" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
         <LinearLayout
+            android:id="@+id/events_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/events_view"
-            android:orientation="vertical"
+            android:layout_marginHorizontal="30dp"
             android:layout_marginTop="40dp"
-            android:layout_marginHorizontal="30dp"/>
+            android:orientation="vertical" />
     </ScrollView>
 
     <Button

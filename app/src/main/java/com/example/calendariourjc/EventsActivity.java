@@ -34,51 +34,57 @@ public class EventsActivity extends AppCompatActivity {
 
         ArrayList<DateEvent> dateEvents = new ArrayList<>(DateEvent.getAll(sharedPrefs));
 
-        for (DateEvent dateEvent: dateEvents) {
-            TextView date = new TextView(this);
-            TextView title = new TextView(this);
-            TextView description = new TextView(this);
+        if (dateEvents.size()>0){
+            for (DateEvent dateEvent: dateEvents) {
+                TextView date = new TextView(this);
+                TextView title = new TextView(this);
+                TextView description = new TextView(this);
 
-            Button delete = new Button(this);
-            Button viewBtn = new Button(this);
-            delete.setText("Borrar");
-            viewBtn.setText("Ver");
+                Button delete = new Button(this);
+                Button viewBtn = new Button(this);
+                delete.setText("Borrar");
+                viewBtn.setText("Ver");
 
-            LinearLayout buttons = new LinearLayout(this);
-            buttons.setOrientation(LinearLayout.HORIZONTAL);
-            buttons.addView(viewBtn);
-            buttons.addView(delete);
+                LinearLayout buttons = new LinearLayout(this);
+                buttons.setOrientation(LinearLayout.HORIZONTAL);
+                buttons.addView(viewBtn);
+                buttons.addView(delete);
 
-            delete.setOnClickListener(view -> {
-                dateEvent.delete(sharedPrefs);
-                eventsView.removeView(title);
-                eventsView.removeView(date);
-                eventsView.removeView(description);
-                eventsView.removeView(buttons);
-            });
+                delete.setOnClickListener(view -> {
+                    dateEvent.delete(sharedPrefs);
+                    eventsView.removeView(title);
+                    eventsView.removeView(date);
+                    eventsView.removeView(description);
+                    eventsView.removeView(buttons);
 
-            viewBtn.setOnClickListener(view -> {
-                Intent eventDetail = new Intent(EventsActivity.this, EventDetailActivity.class);
-                eventDetail
-                        .putExtra("id", dateEvent.getId())
-                        .putExtra("title", dateEvent.getTitle())
-                        .putExtra("date", dateEvent.getDate())
-                        .putExtra("description", dateEvent.getDescription());
-                EventsActivity.this.startActivity(eventDetail);
-            });
+                    //Problema al borrar, porque no se borra por índice y no se quita del array List
+                    //Problema con los getDates
+                });
 
-            date.setText("Fecha: " + dateEvent.getDate());
-            title.setText("Titulo: " + dateEvent.getTitle());
-            description.setText("Descripcion: " + dateEvent.getDescription());
+                viewBtn.setOnClickListener(view -> {
+                    Intent eventDetail = new Intent(EventsActivity.this, EventDetailActivity.class);
+                    eventDetail
+                            .putExtra("id", dateEvent.getId())
+                            .putExtra("title", dateEvent.getTitle())
+                            .putExtra("date", dateEvent.getDate())
+                            .putExtra("description", dateEvent.getDescription());
+                    EventsActivity.this.startActivity(eventDetail);
+                });
 
-            eventsView.addView(title);
-            eventsView.addView(date);
-            eventsView.addView(description);
-            eventsView.addView(buttons);
+//                date.setText("Fecha: " + dateEvent.getDate());
+//                title.setText("Titulo: " + dateEvent.getTitle());
+//                description.setText("Descripcion: " + dateEvent.getDescription());
 
-            LinearLayout separator = new LinearLayout(this);
-            eventsView.addView(separator, 10, 60);
+                eventsView.addView(title);
+                eventsView.addView(date);
+                eventsView.addView(description);
+                eventsView.addView(buttons);
+
+                LinearLayout separator = new LinearLayout(this);
+                eventsView.addView(separator, 10, 60);
+            }
         }
+
 
         go_add_event_btn.setOnClickListener(view -> {
             Intent addDate = new Intent(EventsActivity.this, AddDateEventActivity.class);
