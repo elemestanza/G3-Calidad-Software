@@ -12,8 +12,8 @@ import com.example.calendariourjc.ui.dashboard.DashboardFragment;
 
 public class ScheduleActivity extends AppCompatActivity {
 
-    private WebView scheduleWeb;
-    private Button backBtn;
+    public WebView scheduleWeb;
+    public Button backBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
