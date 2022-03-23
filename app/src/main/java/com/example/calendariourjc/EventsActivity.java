@@ -1,13 +1,13 @@
 package com.example.calendariourjc;
 
 import android.content.Context;
+import android.widget.ScrollView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
