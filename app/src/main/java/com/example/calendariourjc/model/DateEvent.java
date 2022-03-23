@@ -149,7 +149,7 @@ public class DateEvent {
         for(int i = 0; i < lastIndex; i++) {
             String comment = sharedPrefs.getString(id + "-DateEvent-Comment-" + i, "");
 
-            if(comment == "") continue;
+            if(comment.equals("")) continue;
 
             comments.put(i, comment);
         }
