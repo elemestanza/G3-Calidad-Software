@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -15,12 +16,13 @@ import com.example.calendariourjc.model.DateEvent;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EventDetailActivity extends AppCompatActivity {
+public class EventDetailActivity<activity_event_detail> extends AppCompatActivity {
 
     Button addCommentBtn;
+    static Button BotonSalida;
     TextView titleView;
     TextView dateView;
-    TextView descriptionView;
+    static TextView descriptionView;
     LinearLayout commentsview;
 
     @Override
@@ -32,6 +34,7 @@ public class EventDetailActivity extends AppCompatActivity {
         String title = (String) getInfo("title");
         String date = (String) getInfo("date");
         String description = (String) getInfo("description");
+        BotonSalida = (Button) findViewById(R.id.boton_salir);
 
         createViews(title, date, description);
 
@@ -41,6 +44,15 @@ public class EventDetailActivity extends AppCompatActivity {
         showComments(comments, id, sharedPrefs);
 
         createAddCommentButton(id, title, date, description);
+
+        BotonSalida.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(EventDetailActivity.this,MainActivity.class);
+                setContentView(R.layout.activity_event_detail);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void createViews(String title, String date, String description){
@@ -98,6 +110,4 @@ public class EventDetailActivity extends AppCompatActivity {
             EventDetailActivity.this.startActivity(addComment);
         });
     }
-
-
 }
