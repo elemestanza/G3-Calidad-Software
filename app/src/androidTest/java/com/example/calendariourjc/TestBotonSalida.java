@@ -1,16 +1,17 @@
 package com.example.calendariourjc;
 
-import org.junit.runner.RunWith;
+import static org.junit.Assert.assertEquals;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import org.junit.Test;
 
+import io.cucumber.java.PendingException;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
-@RunWith(Cucumber.class)
 public class TestBotonSalida {
 
+    @Test
     @Given("^la pantalla de añadir notificación$")
     public void la_pantalla_de_aadir_notificacin() throws Throwable {
         throw new PendingException();
@@ -23,6 +24,7 @@ public class TestBotonSalida {
 
     @Then("^se volverá a la pantalla \"([^\"]*)\"$")
     public void se_volver_a_la_pantalla_something(String strArg1) throws Throwable {
+        assertEquals(new MainActivity(),EventDetailActivity.BotonSalida.callOnClick());
         throw new PendingException();
     }
 
