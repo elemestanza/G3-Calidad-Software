@@ -1,6 +1,7 @@
 package com.example.calendariourjc;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.CalendarView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class CalendarActivity extends AppCompatActivity {
 
     public CalendarView calendar;
+    static Button BotonIni;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
