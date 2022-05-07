@@ -3,12 +3,19 @@ package com.example.calendariourjc;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        features = "app/java/com.example/calendariourjc/Features"
+)
 public class TestModificar {
 
     @Given("^la pantalla de añadir notificación$")
