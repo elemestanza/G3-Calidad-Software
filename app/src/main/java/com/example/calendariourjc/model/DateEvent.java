@@ -157,4 +157,12 @@ public class DateEvent {
         return comments;
     }
 
+
+    private boolean checkDescription(String description){
+
+
+
+        return true;
+    }
+
 }

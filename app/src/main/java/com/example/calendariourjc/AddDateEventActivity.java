@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 //import android.widget.Button;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,11 +21,14 @@ public class AddDateEventActivity extends AppCompatActivity {
     EditText title;
     EditText description;
 
+
     Button add_btn;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Utils utils = new Utils();
 
         setContentView(R.layout.activity_add_date_event);
 
